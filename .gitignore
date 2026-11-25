@@ -1,9 +1,9 @@
 # Runtime data
-shared-state.json
-shared-state.bak.json
-shared-revision.txt
-shared-history.json
-.session-secret
-uploads/
+# shared-state.json
+# shared-state.bak.json
+# shared-revision.txt
+# shared-history.json
+# .session-secret
+# uploads/
 __pycache__/
 .DS_Store
