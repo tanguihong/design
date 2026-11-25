@@ -22,8 +22,23 @@
 首次使用需在该项目目录中保留 `启动共享.command` 的可执行权限。若 macOS 阻止打开，可在终端进入项目目录并运行：
 
 ```bash
-chmod +x "启动共享.command" "启动公网访问.command"
+chmod +x "启动共享.command" "启动公网访问.command" "定期备份提交.sh"
 ```
+
+## 定期自动提交（按当天日期）
+
+`定期备份提交.sh` 会定期检查工作区改动，有变更时执行 `git add` 并以当天日期（如 `2025-11-25`）作为 commit message 提交。双击启动脚本时会自动在后台开启；也可在终端单独运行：
+
+```bash
+cd "/Users/tammy/Documents/home/装修管理"
+./定期备份提交.sh            # 前台监控（Ctrl+C 停止）
+./定期备份提交.sh --daemon   # 后台监控
+./定期备份提交.sh --once     # 只提交一次
+./定期备份提交.sh --stop     # 停止后台监控
+INTERVAL=60 ./定期备份提交.sh --daemon   # 改为每 60 秒检查一次（默认 300 秒）
+```
+
+后台日志：`/tmp/zx-auto-commit.log`。
 
 服务进程运行期间，Mac 上可通过 `http://localhost:8777` 访问。关闭启动窗口会停止服务。
 

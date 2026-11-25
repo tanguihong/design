@@ -4,6 +4,11 @@ cd "$(dirname "$0")"
 PORT="${PORT:-8777}"
 URL="http://localhost:$PORT"
 
+# 后台启动定期备份：有文件改动时以当天日期自动 git commit
+if [[ -x "./定期备份提交.sh" ]]; then
+  ./定期备份提交.sh --daemon
+fi
+
 if lsof -ti tcp:$PORT >/dev/null 2>&1; then
   echo "端口 $PORT 已有服务在运行，直接打开浏览器：$URL"
   echo "如需重启，请先关闭之前打开的启动窗口。"

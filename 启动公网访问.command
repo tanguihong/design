@@ -14,6 +14,11 @@ if ! command -v cloudflared >/dev/null 2>&1; then
   exit 1
 fi
 
+# 后台启动定期备份：有文件改动时以当天日期自动 git commit
+if [[ -x "./定期备份提交.sh" ]]; then
+  ./定期备份提交.sh --daemon
+fi
+
 # 若本机服务未运行，则在后台启动
 if ! lsof -ti tcp:8777 >/dev/null 2>&1; then
   echo "正在后台启动本地服务…"
