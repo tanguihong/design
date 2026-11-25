@@ -1,0 +1,612 @@
+/* ============================================================
+ *  家装项目管理平台 · 种子数据
+ *  数据来源：装修预算表.xlsx（米家方案 / 全屋WiFi / 样板间用材 /
+ *            装修顺序 / 单项注意事项 / 插座清单 / 电器报价表 /
+ *            预算表明细 / 实际开支表 / 装修预算明细）
+ *            原始-模型.pdf（量房表模板字段）
+ * ============================================================ */
+window.SEED = {
+  meta: {
+    projectName: "新居装修",
+    community: "金茂晓棠",
+    layout: "四室两厅 · 一厨两卫 · 全屋智能",
+    area: "约 120㎡",
+    handoverDate: "",
+    startDate: "",
+    targetDate: "",
+    budgetTotal: 337346,
+    owner: "我们",
+    mode: "自装",
+    collaborators: ["我", "男朋友"]
+  },
+
+  /* ---------------- 阶段流程（施工顺序 + 关键工艺） ---------------- */
+  stages: [
+    {
+      id: "s0",
+      name: "前期准备 · 设计 / 预算 / 设备",
+      phase: "准备",
+      start: "", end: "", note: "设计定稿、预算编制、三大件与设备选型。空调、净水已定。",
+      tasks: [
+        { id: "t0a", text: "户型方案与平面布局定稿", done: true },
+        { id: "t0b", text: "装修预算编制（合计 ¥337,346）", done: true },
+        { id: "t0c", text: "中央空调选定并签约（美的梦想家 Ultra180 一拖六）", done: true },
+        { id: "t0d", text: "净水器选定（松下瀧泉 800G 全厨）", done: true },
+        { id: "t0e", text: "新风 / 地暖方案与报价确认", done: false },
+        { id: "t0f", text: "全屋智能（米家）& 全屋 WiFi（华为）方案确认", done: false },
+        { id: "t0g", text: "确定自装工种、工长与各供应商", done: false }
+      ]
+    },
+    {
+      id: "s1",
+      name: "拆改 · 砸墙 / 砌墙",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t1a", text: "核对户型图，明确承重墙 / 剪力墙，严禁破坏承重结构", done: false },
+        { id: "t1b", text: "拆墙、砌墙、门洞修整", done: false },
+        { id: "t1c", text: "新旧墙体交接处挂网，防止后期开裂", done: false },
+        { id: "t1d", text: "装修垃圾清运下楼、外运清理", done: false }
+      ]
+    },
+    {
+      id: "s2",
+      name: "封窗",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t2a", text: "复测窗洞尺寸，确认封窗方案与型材", done: false },
+        { id: "t2b", text: "封窗外侧做排水斜坡，防止雨水倒灌", done: false },
+        { id: "t2c", text: "窗框与墙体缝隙发泡胶 + 防水密封处理", done: false },
+        { id: "t2d", text: "瓷砖与窗边交界用防霉玻璃胶（不用美缝剂）", done: false }
+      ]
+    },
+    {
+      id: "s3",
+      name: "空调 · 新风",
+      phase: "施工",
+      start: "", end: "", note: "设备已定，需与水电位、吊顶交叉配合。",
+      tasks: [
+        { id: "t3a", text: "中央空调内机定位、吊装，冷凝水管保证坡度", done: false },
+        { id: "t3b", text: "新风主机与管路布置，预留检修口", done: false },
+        { id: "t3c", text: "内机与吊顶配合，预留回风口、检修口", done: false },
+        { id: "t3d", text: "铜管保温、冷凝水试水、系统打压测试", done: false },
+        { id: "t3e", text: "确认与水电、吊顶的施工顺序", done: false }
+      ]
+    },
+    {
+      id: "s4",
+      name: "改水电",
+      phase: "施工",
+      start: "", end: "", note: "水管走顶、电线全换、横平竖直。",
+      tasks: [
+        { id: "t4a", text: "水管走顶、电线全换、横平竖直", done: false },
+        { id: "t4b", text: "按插座清单全屋强弱电放线定位", done: false },
+        { id: "t4c", text: "线盒装锁扣，防止穿线损伤电线", done: false },
+        { id: "t4d", text: "开槽封槽，槽内做防水处理", done: false },
+        { id: "t4e", text: "强弱电分管分盒，间距 ≥30cm", done: false },
+        { id: "t4f", text: "厨房带开关、水区带防溅盒、插座高度复核", done: false },
+        { id: "t4g", text: "水管打压、通水通电测试，全程拍照留档", done: false }
+      ]
+    },
+    {
+      id: "s5",
+      name: "防水 · 闭水试验",
+      phase: "施工",
+      start: "", end: "", note: "湿区墙面 1.8m，干区 0.5m，厨房 0.3m。",
+      tasks: [
+        { id: "t5a", text: "铲除开发商原有墙面防水，重新做，防止鼓包脱落", done: false },
+        { id: "t5b", text: "卫生间墙面 1.8m、干区 0.5m、厨房 0.3m 涂刷", done: false },
+        { id: "t5c", text: "卫生间门口堵漏王多刷两遍做止水坝", done: false },
+        { id: "t5d", text: "管根、阴阳角加强处理", done: false },
+        { id: "t5e", text: "下水道包隔音棉（先黄金阻尼片，再 2 公分棉）", done: false },
+        { id: "t5f", text: "48 小时闭水试验，到楼下查看有无渗漏", done: false }
+      ]
+    },
+    {
+      id: "s6",
+      name: "地暖",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t6a", text: "地面找平、清理干净", done: false },
+        { id: "t6b", text: "保温板、反射膜铺设，盘管间距均匀", done: false },
+        { id: "t6c", text: "盘管覆盖门厅、起居室、餐厅、卧室", done: false },
+        { id: "t6d", text: "分集水器安装，打压试验并保压", done: false },
+        { id: "t6e", text: "回填层施工与养护", done: false }
+      ]
+    },
+    {
+      id: "s7",
+      name: "瓦工 · 铺瓷砖",
+      phase: "施工",
+      start: "", end: "", note: "全屋通铺、无过门石、全屋通缝、薄贴法、阳角海棠角。",
+      tasks: [
+        { id: "t7a", text: "全屋通铺、无过门石、全屋通缝", done: false },
+        { id: "t7b", text: "薄贴法：大砖用 C2 / C2TE 瓷砖胶，小砖用 C1，禁止混水泥", done: false },
+        { id: "t7c", text: "阳角海棠角，弯道弧度处理", done: false },
+        { id: "t7d", text: "卫生间墙压地、地面找坡排水", done: false },
+        { id: "t7e", text: "淋浴间地面挡水、门槛石收口", done: false },
+        { id: "t7f", text: "瓷砖空鼓检查（空鼓率 <5%）、平整度验收", done: false }
+      ]
+    },
+    {
+      id: "s8",
+      name: "美缝 · 成品保护",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t8a", text: "水泥干透后再做美缝", done: false },
+        { id: "t8b", text: "客厅卧室用真瓷胶；卫生间用环氧彩砂 / 水泥基", done: false },
+        { id: "t8c", text: "施工后地面成品保护", done: false }
+      ]
+    },
+    {
+      id: "s9",
+      name: "木工 · 吊顶",
+      phase: "施工",
+      start: "", end: "", note: "客餐厅双眼皮边吊 + 卧室石膏线吊顶。",
+      tasks: [
+        { id: "t9a", text: "环保石膏板，龙骨间距规范", done: false },
+        { id: "t9b", text: "客餐厅双眼皮边吊，预留窗帘盒", done: false },
+        { id: "t9c", text: "吊顶钉眼位置刷防锈漆", done: false },
+        { id: "t9d", text: "灯槽灰尘清理干净（否则开空调满屋灰）", done: false },
+        { id: "t9e", text: "厨卫用铝扣板 300×600，与浴霸 / 筒灯同步", done: false }
+      ]
+    },
+    {
+      id: "s10",
+      name: "刮腻子 · 墙面",
+      phase: "施工",
+      start: "", end: "", note: "全屋挂网找平，2 遍耐潮腻子，底漆 1 遍 + 面漆 2 遍。",
+      tasks: [
+        { id: "t10a", text: "全屋挂网找平", done: false },
+        { id: "t10b", text: "柜子、门、踢脚线位置重点找平", done: false },
+        { id: "t10c", text: "2 遍耐潮腻子，每一遍干透再刷下一遍", done: false },
+        { id: "t10d", text: "打磨、底漆 1 遍 + 面漆 2 遍", done: false },
+        { id: "t10e", text: "刷完留少量乳胶漆，以备磕碰修补", done: false }
+      ]
+    },
+    {
+      id: "s11",
+      name: "柜子安装",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t11a", text: "检查下单颜色与板材是否一致", done: false },
+        { id: "t11b", text: "橱柜、衣柜、玄关柜、餐边柜、电视柜安装", done: false },
+        { id: "t11c", text: "台面与墙面收口、打胶", done: false }
+      ]
+    },
+    {
+      id: "s12",
+      name: "筒灯射灯 · 厨卫吊顶",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t12a", text: "筒灯深杯防眩", done: false },
+        { id: "t12b", text: "卧室双眼皮 + 主灯，不装射灯筒灯", done: false },
+        { id: "t12c", text: "开关插座面板安装（无边框、带安全门）", done: false },
+        { id: "t12d", text: "面板与墙面缝隙处理", done: false }
+      ]
+    },
+    {
+      id: "s13",
+      name: "门 · 踢脚线 · 门套",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t13a", text: "卧室门套、踢脚线 45 度拼接", done: false },
+        { id: "t13b", text: "门装好贴防撞垫", done: false },
+        { id: "t13c", text: "墙面与踢脚线采用乳胶漆收口，不用玻璃胶", done: false }
+      ]
+    },
+    {
+      id: "s14",
+      name: "橱柜 · 烟机灶具",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t14a", text: "提前确定烟机灶具型号", done: false },
+        { id: "t14b", text: "若为集成灶，先装集成灶再装橱柜", done: false },
+        { id: "t14c", text: "台面安装完清理下方灰尘", done: false }
+      ]
+    },
+    {
+      id: "s15",
+      name: "卫浴 · 洁具",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t15a", text: "马桶排水管周围用堵漏王封堵", done: false },
+        { id: "t15b", text: "法兰圈安装到位，防止渗漏", done: false },
+        { id: "t15c", text: "出水口墙根先打防霉玻璃胶再装龙头角阀", done: false },
+        { id: "t15d", text: "浴室柜、花洒、地漏安装", done: false }
+      ]
+    },
+    {
+      id: "s16",
+      name: "开荒保洁",
+      phase: "施工",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t16a", text: "深度开荒保洁，清除灰尘", done: false },
+        { id: "t16b", text: "检查地漏是否通畅", done: false },
+        { id: "t16c", text: "玻璃、五金清洁", done: false }
+      ]
+    },
+    {
+      id: "s17",
+      name: "安装窗帘",
+      phase: "软装",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t17a", text: "纯色窗帘，拒绝拼色", done: false },
+        { id: "t17b", text: "窗帘盒 / 轨道安装", done: false },
+        { id: "t17c", text: "电动窗帘电机调试（米家联动）", done: false }
+      ]
+    },
+    {
+      id: "s18",
+      name: "电器 · 家具 · 晾衣架",
+      phase: "软装",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t18a", text: "家电进场安装（冰箱 / 洗烘 / 电视 / 洗碗机）", done: false },
+        { id: "t18b", text: "家具进场", done: false },
+        { id: "t18c", text: "晾衣架安装", done: false }
+      ]
+    },
+    {
+      id: "s19",
+      name: "软装 · 验收交付",
+      phase: "软装",
+      start: "", end: "", note: "",
+      tasks: [
+        { id: "t19a", text: "软装搭配、床品、装饰", done: false },
+        { id: "t19b", text: "甲醛检测验收", done: false },
+        { id: "t19c", text: "全屋功能联调（智能家居 / 网络 / 空调地暖新风）", done: false },
+        { id: "t19d", text: "竣工资料、保修登记", done: false }
+      ]
+    }
+  ],
+
+  /* ---------------- 工艺要求（单项注意事项 + 施工细节） ---------------- */
+  standards: [
+    { id: "g01", cat: "防水", level: "关键", title: "铲除原有防水再重做", detail: "做防水时去掉开发商墙面原有防水，防止后续鼓包脱落。", checked: false },
+    { id: "g02", cat: "防水", level: "关键", title: "防水高度分区", detail: "卫生间墙面 1.8m、干区 0.5m、厨房 0.3m。", checked: false },
+    { id: "g03", cat: "防水", level: "关键", title: "卫生间门口止水坝", detail: "卫生间门口用堵漏王多刷两遍，做个止水坝，防止墙皮受潮损坏。", checked: false },
+    { id: "g04", cat: "防水", level: "关键", title: "48 小时闭水试验", detail: "防水做完做 48 小时闭水试验，到楼下查看；采用虹吸排水，防止管道与地漏之间有缝隙。", checked: false },
+    { id: "g05", cat: "防水", level: "重要", title: "下水管包隔音棉", detail: "下水道包隔音棉：先黄金阻尼片，再 2 公分棉。", checked: false },
+    { id: "g06", cat: "水电", level: "关键", title: "线盒装锁扣", detail: "水电穿线时在线盒里装锁扣，防止损伤电线；水泥封槽。", checked: false },
+    { id: "g07", cat: "水电", level: "重要", title: "水管走顶 · 电线全换", detail: "水管走顶、电线全换、横平竖直、开槽封槽，强弱电分管分盒。", checked: false },
+    { id: "g08", cat: "瓦工瓷砖", level: "关键", title: "瓷砖胶正确使用", detail: "大瓷砖用 C2 或 C2TE 瓷砖胶，小砖用 C1，禁止瓷砖胶混合水泥使用。", checked: false },
+    { id: "g09", cat: "瓦工瓷砖", level: "重要", title: "通铺与阳角", detail: "全屋通铺、无过门石、全屋通缝、薄贴法、美缝一体、阳角海棠角、弯道弧度。", checked: false },
+    { id: "g10", cat: "瓦工瓷砖", level: "重要", title: "窗边交界收口", detail: "瓷砖和窗边交界的地方不用美缝剂，采用防霉玻璃胶。", checked: false },
+    { id: "g11", cat: "木工吊顶", level: "重要", title: "钉眼刷防锈漆", detail: "吊顶时要在钉眼的位置刷防锈漆。", checked: false },
+    { id: "g12", cat: "木工吊顶", level: "重要", title: "灯槽清灰", detail: "吊顶里面的灯槽，灰尘清理干净，不然开空调满屋灰。", checked: false },
+    { id: "g13", cat: "木工吊顶", level: "一般", title: "厨卫用铝扣板", detail: "铝扣板性价比较高，300×600，厨卫不要选用石膏板。", checked: false },
+    { id: "g14", cat: "油漆墙面", level: "关键", title: "腻子分层干透", detail: "刷乳胶漆时，头遍腻子刷完等几天再刷第二遍，否则容易开裂。", checked: false },
+    { id: "g15", cat: "油漆墙面", level: "重要", title: "踢脚线用乳胶漆收口", detail: "墙面和踢脚线采用乳胶漆，不要用玻璃胶。", checked: false },
+    { id: "g16", cat: "油漆墙面", level: "重要", title: "留备用乳胶漆", detail: "刷完乳胶漆，找大瓶子留点乳胶漆，以备磕碰修补。", checked: false },
+    { id: "g17", cat: "油漆墙面", level: "关键", title: "新旧墙交接挂网", detail: "新旧墙体交接时记得挂网，防止后续开裂。", checked: false },
+    { id: "g18", cat: "油漆墙面", level: "重要", title: "柜门踢脚线位置找平", detail: "刮腻子时，对柜子、门、踢脚线的位置进行找平。", checked: false },
+    { id: "g19", cat: "门窗", level: "关键", title: "封窗外留斜坡", detail: "封窗外面留斜坡，防止雨水倒灌。", checked: false },
+    { id: "g20", cat: "门窗", level: "一般", title: "门防撞与 45 度收口", detail: "门装好贴防撞垫；卧室门套、踢脚线采用 45 度拼接。", checked: false },
+    { id: "g21", cat: "卫浴", level: "关键", title: "马桶底座堵漏王封堵", detail: "装马桶时，排水管周围有砂浆要用堵漏王封起来，即使法兰圈老化，也不会渗入砂浆层。", checked: false },
+    { id: "g22", cat: "卫浴", level: "重要", title: "出水口先打防霉胶", detail: "出水口和墙根缝隙，先用防霉玻璃胶堵上，再装水龙头和角阀。", checked: false },
+    { id: "g23", cat: "卫浴", level: "一般", title: "台面下方清灰", detail: "厨房台面安装完成后，清理下面的灰尘；做完保洁检查地漏。", checked: false },
+    { id: "g24", cat: "美缝", level: "关键", title: "分区选美缝材料", detail: "客厅卧室使用真瓷胶即可，卫生间使用环氧彩砂或水泥基，防水更好。", checked: false },
+    { id: "g25", cat: "板材", level: "关键", title: "不用密度板", detail: "不要采用密度板（甲醛之王）；不注重品牌，注重板材，选择 MDI 胶的板材。", checked: false },
+    { id: "g26", cat: "灯具", level: "一般", title: "卧室灯光方案", detail: "卧室不装射灯筒灯，直接双眼皮 + 主灯；不必使用反光灯。", checked: false },
+    { id: "g27", cat: "灯具", level: "一般", title: "筒灯深杯 / 浴霸选型", detail: "筒灯选深杯防眩；浴霸只考虑功率和电机。", checked: false },
+    { id: "g28", cat: "窗帘软装", level: "一般", title: "纯色窗帘", detail: "纯色窗帘，拒绝拼色。", checked: false },
+    { id: "g29", cat: "窗帘软装", level: "一般", title: "床垫选择", detail: "不要乳胶，考虑五星级酒店同款床垫、0 压棉。", checked: false }
+  ],
+
+  /* ---------------- 预算明细（装修预算明细，合计 ¥337,346） ---------------- */
+  budget: [
+    { id: "b01", cat: "三大件", sub: "新风", note: "设备 + 安装全套", qty: "1", unit: "打包", amount: 9000 },
+    { id: "b02", cat: "三大件", sub: "中央空调", note: "一拖六中央空调", qty: "1", unit: "打包", amount: 30000 },
+    { id: "b03", cat: "三大件", sub: "地暖", note: "锅炉自带采暖 + 全屋生活热水", qty: "1", unit: "打包", amount: 21000 },
+
+    { id: "b04", cat: "基础硬装", sub: "瓷砖主材", note: "全屋通铺，包含卫生间和厨房", qty: "全屋", unit: "打包", amount: 14000 },
+    { id: "b05", cat: "基础硬装", sub: "瓦工 + 辅材", note: "全屋通铺、无过门石、全屋通缝、薄贴法、美缝一体、阳角海棠角、弯道弧度（地面 75/㎡，墙面 140–150/㎡）", qty: "全屋", unit: "打包", amount: 25000 },
+    { id: "b06", cat: "基础硬装", sub: "全屋强弱电全改水电工程", note: "水管走顶、电线全换、横平竖直、开槽封槽、人工 + 辅材全套", qty: "110", unit: "㎡", amount: 20000 },
+    { id: "b07", cat: "基础硬装", sub: "2 卫 + 阳台全屋防水工程", note: "卫生间墙面 1.8m 高、地面全做、阳台防水、双层防水 + 闭水试验", qty: "22", unit: "㎡", amount: 1870 },
+    { id: "b08", cat: "基础硬装", sub: "全屋墙面基层 + 腻子 + 乳胶漆", note: "全屋挂网找平、2 遍耐潮腻子、打磨、底漆 1 遍 + 面漆 2 遍", qty: "290", unit: "墙面展开", amount: 13920 },
+    { id: "b09", cat: "基础硬装", sub: "客餐厅双眼皮吊顶 + 卧室石膏线吊顶", note: "无复杂造型，极简双眼皮吊顶 + 卧室石膏线条", qty: "全屋", unit: "打包", amount: 8800 },
+    { id: "b10", cat: "基础硬装", sub: "墙体拆改新建、门洞修补、垃圾清运", note: "拆墙砌墙、门洞修整、装修垃圾外运清理", qty: "全屋", unit: "打包", amount: 7860 },
+
+    { id: "b11", cat: "全屋成品主材", sub: "开放式厨房定制橱柜", note: "地柜 + 石英石台面 + 吊柜，预留烟机洗碗机插座", qty: "4.8", unit: "地柜", amount: 6144 },
+    { id: "b12", cat: "全屋成品主材", sub: "厨房完美系统吊轨联动门", note: "吧台三联动 + 厨房 3 联动吊轨门", qty: "9", unit: "㎡", amount: 7020 },
+    { id: "b13", cat: "全屋成品主材", sub: "全屋室内门 + 门套", note: "静音实木门、卫生间极简灰玻门，全套门套安装", qty: "6", unit: "樘", amount: 9900 },
+    { id: "b14", cat: "全屋成品主材", sub: "全屋窗台石", note: "天然大理石窗台石，取消过门石，适配 715 通铺", qty: "全屋", unit: "打包", amount: 2980 },
+    { id: "b15", cat: "全屋成品主材", sub: "主卫 + 公卫全套卫浴", note: "马桶、浴室柜、恒温花洒、五金地漏全套配齐", qty: "2", unit: "套", amount: 8400 },
+    { id: "b16", cat: "全屋成品主材", sub: "全屋智能开关插座面板", note: "小米中端品牌，全房开关插座全部配齐", qty: "全屋", unit: "打包", amount: 15000 },
+    { id: "b17", cat: "全屋成品主材", sub: "厨房 + 卫生间集成吊顶 + 风暖浴霸", note: "蜂窝大板吊顶、卫生间风暖照明换气三合一", qty: "全屋", unit: "打包", amount: 3000 },
+
+    { id: "b18", cat: "收尾项目", sub: "全屋瓷砖环氧彩砂美缝", note: "715 通铺 + 卫生间墙地全屋同色柔光美缝", qty: "152", unit: "㎡", amount: 4256 },
+    { id: "b19", cat: "收尾项目", sub: "极简铝合金薄踢脚线 + 安装", note: "715 通铺专用极窄款，含人工安装", qty: "122", unit: "m", amount: 5490 },
+    { id: "b20", cat: "收尾项目", sub: "全屋深度开荒保洁 + 甲醛竣工验收", note: "装修完工全屋精细保洁、甲醛检测验收", qty: "全屋", unit: "打包", amount: 1906 },
+
+    { id: "b21", cat: "全屋定制", sub: "全屋定制衣柜 + 玄关鞋柜 + 门厅储物柜", note: "4 个卧室衣柜 + 入户玄关柜 + 餐边柜 + 电视柜", qty: "55", unit: "㎡", amount: 45000 },
+    { id: "b22", cat: "全屋定制", sub: "阳台柜", note: "阳台定制柜", qty: "1", unit: "套", amount: 2000 },
+
+    { id: "b23", cat: "家具家电软装", sub: "厨房电器", note: "烟机灶具美的小西梅 + 18 套嵌入式洗碗机 + 前置过滤器 + 净水器（灶具 6000 / 洗碗机 5000 / 净水器 2500）", qty: "1", unit: "打包", amount: 13500 },
+    { id: "b24", cat: "家具家电软装", sub: "大家电", note: "十字多门冰箱（海尔山茶花）+ 洗烘套装机（小天鹅小乌梅）+ 85 寸电视（冰箱 5000 / 洗烘 7000 / 电视 3800）", qty: "1", unit: "打包", amount: 15800 },
+    { id: "b25", cat: "家具家电软装", sub: "小家电", note: "扫地洗地机器人", qty: "1", unit: "套", amount: 2900 },
+    { id: "b26", cat: "家具家电软装", sub: "客餐厅家具", note: "布艺沙发 + 茶几 + 岩板餐桌 6 椅", qty: "1", unit: "套", amount: 10000 },
+    { id: "b27", cat: "家具家电软装", sub: "卧室全套家具", note: "主卧 2.0 床垫 + 次卧 1.8 床垫全套 + 次卧 1.5 床垫全套", qty: "3", unit: "套", amount: 15000 },
+    { id: "b28", cat: "家具家电软装", sub: "全屋窗帘 + 灯具", note: "客厅 + 4 卧室窗帘纱帘轨道 + 全屋主灯卧室灯过道灯", qty: "1", unit: "套", amount: 12600 },
+    { id: "b29", cat: "家具家电软装", sub: "软装备用杂项", note: "床品、装饰摆件、小配件备用金", qty: "1", unit: "套", amount: 5000 }
+  ],
+
+  /* ---------------- 实际开支台账（实际开支表 + 电器报价） ---------------- */
+  expenses: [
+    { id: "e01", cat: "三大件", product: "中央空调", spec: "美的 梦想家 Ultra180 一拖六（71+36+42+28+22+22；主卧 42 双出风 P-SS，书房 22 带泵 PX-TS）", price: 29497, discount: 468, paid: 29029, pending: 0, budget: 60000, contact: "", method: "京东 / 光大信用卡", date: "", note: "光大信用卡优惠 240+178+50，实付 29029", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e02", cat: "三大件", product: "新风", spec: "可处理 PM2.5，分区控制，能效 ≥2 级", price: 9600, discount: 0, paid: 0, pending: 9600, budget: 0, contact: "", method: "", date: "", note: "待签合同", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e03", cat: "三大件", product: "地暖", spec: "35kW 燃气两用炉 + 盘管 + 分集水器", price: 19900, discount: 0, paid: 0, pending: 19900, budget: 0, contact: "", method: "", date: "", note: "待签合同", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e04", cat: "电器", product: "净水器", spec: "松下瀧泉系列全厨大流量数显龙头双出水 800G（TK-ARNK61H）", price: 4079.15, discount: 400, paid: 3679.15, pending: 0, budget: 20000, contact: "", method: "", date: "", note: "优惠 400，实付 3679.15", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e05", cat: "电器", product: "烟机灶具", spec: "方太 / 美的小西梅 集成方案", price: 6000, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e06", cat: "电器", product: "洗碗机", spec: "18 套嵌入式（方太）", price: 5000, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e07", cat: "电器", product: "冰箱", spec: "海尔山茶花 508L Pro（830×594×1900，预留 840×600×1908）", price: 5000, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e08", cat: "电器", product: "洗烘套装", spec: "小天鹅小乌梅 洗衣机 + 烘干机", price: 7000, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e09", cat: "电器", product: "电视", spec: "85 寸", price: 3800, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e10", cat: "自装", product: "自装人工 + 辅料", spec: "水电 / 防水 / 瓦工 / 木工 / 油漆 各工种人工 + 辅材，按工种分阶段结算", price: 91450, discount: 0, paid: 0, pending: 0, budget: 100000, contact: "", method: "", date: "", note: "自装 · 按工种分阶段结算", attachments: { contract: [], order: [], pay: [] } },
+    { id: "e11", cat: "全屋定制", product: "全屋定制柜", spec: "4 卧室衣柜 + 玄关柜 + 餐边柜 + 电视柜 + 阳台柜", price: 47000, discount: 0, paid: 0, pending: 0, budget: 0, contact: "", method: "", date: "", note: "计划中 · 待下单", attachments: { contract: [], order: [], pay: [] } }
+  ],
+
+  /* ---------------- 合同管理 ---------------- */
+  contracts: [
+    {
+      id: "c01", name: "中央空调采购安装合同", vendor: "美的（京东自营 / 授权安装）", type: "设备采购", warranty: "整体质保 2 年",
+      amount: 29497, status: "已签约", signDate: "", startDate: "", endDate: "",
+      note: "美的梦想家 Ultra180 一拖六；主卧 42 双出风内机（P-SS），书房 22 带泵通用内机（PX-TS）；含安装调试。",
+      milestones: [
+        { id: "m1", name: "设备款（已付）", amount: 29029, due: "", paid: true, kind: "pay" },
+        { id: "m2", name: "优惠", amount: 468, due: "", kind: "discount" }
+      ]
+    },
+    {
+      id: "c02", name: "净水器采购合同", vendor: "松下", type: "设备采购", warranty: "整体质保 2 年",
+      amount: 4079.15, status: "已签约", signDate: "", startDate: "", endDate: "",
+      note: "瀧泉系列全厨大流量数显龙头双出水 800G（TK-ARNK61H）。",
+      milestones: [
+        { id: "m1", name: "设备款（已付）", amount: 3679.15, due: "", paid: true, kind: "pay" },
+        { id: "m2", name: "优惠", amount: 400, due: "", kind: "discount" }
+      ]
+    },
+    {
+      id: "c03", name: "自装 · 各工种人工/辅料（分项结算）", vendor: "自装（自己找工长 / 师傅）", type: "施工", warranty: "整体质保 2 年",
+      amount: 91450, status: "草稿", signDate: "", startDate: "", endDate: "",
+      note: "自装：水电、防水、瓦工、木工、油漆各工种分别找人，按工种结算人工 + 辅料；全屋通铺、无过门石、薄贴法、阳角海棠角。",
+      milestones: [
+        { id: "m1", name: "水电工种结算", amount: 27435, due: "", paid: false },
+        { id: "m2", name: "防水 / 瓦工种结算", amount: 27435, due: "", paid: false },
+        { id: "m3", name: "木工 / 油工种结算", amount: 27435, due: "", paid: false },
+        { id: "m4", name: "自装收尾验收", amount: 9145, due: "", paid: false }
+      ]
+    },
+    {
+      id: "c04", name: "新风 + 地暖合同", vendor: "（待确定）", type: "设备采购", warranty: "整体质保 2 年",
+      amount: 29500, status: "草稿", signDate: "", startDate: "", endDate: "",
+      note: "新风 9600 + 地暖 19900，含设备与安装调试。",
+      milestones: [
+        { id: "m1", name: "定金 50%", amount: 14750, due: "", paid: false },
+        { id: "m2", name: "安装验收 50%", amount: 14750, due: "", paid: false }
+      ]
+    },
+    {
+      id: "c05", name: "全屋定制合同", vendor: "（待确定）", type: "定制", warranty: "整体质保 2 年",
+      amount: 47000, status: "草稿", signDate: "", startDate: "", endDate: "",
+      note: "4 卧室衣柜 + 入户玄关柜 + 餐边柜 + 电视柜 + 阳台柜，共 55㎡；板材选 MDI 胶，不用密度板。",
+      milestones: [
+        { id: "m1", name: "定金 50%", amount: 23500, due: "", paid: false },
+        { id: "m2", name: "安装验收 50%", amount: 23500, due: "", paid: false }
+      ]
+    }
+  ],
+
+  /* ---------------- 设备选材（样板间用材 + 米家 + WiFi + 电器报价） ---------------- */
+  equipment: {
+    acOptions: [
+      { brand: "格力", series: "star3", spec: "180 外机 71+32+40+28+22+22", price: "约 3.8W" },
+      { brand: "格力", series: "star5", spec: "star5 180 外机暂未定价", price: "待定" },
+      { brand: "美的", series: "设计家", spec: "", price: "" },
+      { brand: "美的", series: "梦想家", spec: "200 外机 71+36+45+28+28+28", price: "约 2.85W" },
+      { brand: "日立", series: "舒享", spec: "", price: "约 3.5W" }
+    ],
+    chosenAC: "美的 梦想家 Ultra180（一拖六：71+36+42+28+22+22）",
+    acActual: 29497,
+    freshAir: "新风主机可处理 PM2.5、可分区、能效 ≥2 级；风量低档 180 / 高档 350 m³/h（美的）；辅材中财 ⌀110 / ⌀75。",
+    freshAirActual: 9600,
+    floorHeat: "地暖壁炉 35kW 燃气两用炉 + 盘管 De16×1.8mm（中财）+ 分集水器 6 路 / 7 路（伟星）。",
+    floorHeatActual: 19900,
+    smartHome: {
+      note: "米家全屋智能 · 小米 + 绿米 京东自购（套三团购全包落地约 ¥6,433.5；自购合计约 ¥7,906）",
+      items: [
+        { area: "中央控制", name: "米家中枢网关", qty: 1, price: 341.1 },
+        { area: "玄关厨房", name: "零火版三键开关面板 X1 超薄", qty: 1, price: 99.45 },
+        { area: "客餐厅", name: "智能中控屏 XMZHP01LM", qty: 1, price: 423.2 },
+        { area: "客餐厅", name: "零火版三键开关面板 X1 超薄", qty: 2, price: 99 },
+        { area: "客餐厅", name: "小米门窗传感器 2", qty: 1, price: 49 },
+        { area: "客餐厅", name: "小米水浸卫士 2", qty: 1, price: 68.4 },
+        { area: "客餐厅", name: "小米天然气卫士", qty: 1, price: 168.3 },
+        { area: "客餐厅", name: "绿米智能电机 C100", qty: 1, price: 398.65 },
+        { area: "客餐厅", name: "窗帘电动轨道（绿米）", qty: 6, price: 80 },
+        { area: "书房/过道", name: "零火版三键开关面板（书房）", qty: 1, price: 99.45 },
+        { area: "书房/过道", name: "智能中控屏（书房）", qty: 1, price: 348.3 },
+        { area: "书房/过道", name: "小米人体传感器（过道）", qty: 1, price: 80 },
+        { area: "书房/过道", name: "人在传感器（卫生间）", qty: 1, price: 69 },
+        { area: "干区/公卫", name: "零火版双键开关面板", qty: 1, price: 79.4 },
+        { area: "卧室一", name: "智能中控屏", qty: 1, price: 348.3 },
+        { area: "卧室一", name: "零火版三键开关面板", qty: 1, price: 99.45 },
+        { area: "卧室一", name: "绿米智能电机 C100", qty: 2, price: 398.65 },
+        { area: "卧室一", name: "窗帘电动轨道（绿米）", qty: 4, price: 80 },
+        { area: "卧室二", name: "智能中控屏", qty: 1, price: 348.3 },
+        { area: "卧室二", name: "零火版三键开关面板", qty: 1, price: 99.45 },
+        { area: "卧室二", name: "绿米智能电机 C100", qty: 2, price: 398.65 },
+        { area: "卧室二", name: "窗帘电动轨道（绿米）", qty: 5, price: 80 },
+        { area: "主卧", name: "智能中控屏", qty: 1, price: 348.3 },
+        { area: "主卧", name: "零火版三键开关面板", qty: 1, price: 99.45 },
+        { area: "主卧", name: "小米人在传感器", qty: 1, price: 69 },
+        { area: "主卧", name: "绿米智能电机 C100", qty: 2, price: 398.65 },
+        { area: "主卧", name: "窗帘电动轨道（绿米）", qty: 6, price: 80 }
+      ]
+    },
+    wifi: {
+      note: "华为全屋 WiFi · 折后约 ¥2,038 / 自购约 ¥2,523",
+      items: [
+        { name: "路由交换一体机 S380-S4P2T（10 口千兆 PoE）", qty: 1, price: 998 },
+        { name: "WiFi6 面板 AP 1800M【主卧】AP162", qty: 1, price: 649 },
+        { name: "WiFi6 面板 AP 1800M【客餐厅】AP362", qty: 1, price: 885 }
+      ]
+    },
+    appliances: [
+      { type: "冰箱 · 海尔山茶花 508L Pro", price: 5000, note: "尺寸 830×594×1900，预留 840×600×1908" },
+      { type: "洗衣机 · 小天鹅小乌梅", price: 3500, note: "" },
+      { type: "烘干机 · 小天鹅小乌梅", price: 3500, note: "" },
+      { type: "电视 · 85 寸", price: 3800, note: "" },
+      { type: "油烟机 · 方太", price: 0, note: "型号待定" },
+      { type: "净水器 · 松下瀧泉 800G", price: 4079.15, note: "已定" }
+    ],
+    materialsNote: "主材参考：瓷砖 / 岩板 东鹏；墙布 欧雅；涂料 久诺；木地板 贝尔；柜体 鼎胜；门 从一；卫浴 九牧；五金 帝朗；灯具 西顿；入户门 王力；智能门锁 樱花；可视对讲 麦驰；厨房电器 方太；冰箱 美的。"
+  },
+
+  /* ---------------- 插座规划（插座清单模板 + 常用点位） ---------------- */
+  sockets: [
+    { id: "p01", area: "玄关", rule: "鞋柜旁、烘鞋器、智能门锁备用、扫拖机器人电源", items: ["鞋柜旁五孔", "烘鞋器插座", "扫拖机器人电源"] },
+    { id: "p02", area: "客厅", rule: "电视墙 ≥4、沙发两侧、空调、落地灯、扫地机", items: ["电视墙五孔×4", "沙发两侧五孔", "空调专用 16A", "落地灯插座"] },
+    { id: "p03", area: "餐边柜", rule: "咖啡机 / 热水壶 / 电饭煲等小家电", items: ["餐边柜五孔×2", "带开关插座"] },
+    { id: "p04", area: "主卧", rule: "床头两侧、书桌、电视、空调、电动窗帘电源", items: ["床头两侧五孔", "空调 16A", "电动窗帘电源", "电视插座"] },
+    { id: "p05", area: "老人房", rule: "床头、书桌、空调、窗帘电源", items: ["床头两侧五孔", "空调 16A", "电动窗帘电源"] },
+    { id: "p06", area: "儿童房", rule: "床头、书桌、空调、窗帘电源", items: ["床头两侧五孔", "空调 16A", "电动窗帘电源"] },
+    { id: "p07", area: "书房", rule: "电脑 / 显示器 / 打印机 / 路由 / 台灯", items: ["书桌五孔×3", "网口", "台灯插座"] },
+    { id: "p08", area: "厨房", rule: "带开关；冰箱、烟机灶具、洗碗机、净水器、操作台、垃圾处理器、凉霸", items: ["冰箱插座", "水盆下方×2", "操作台上方×2", "洗碗机插座", "净水器插座"] },
+    { id: "p09", area: "卫生间", rule: "水区带防溅盒；智能马桶、吹风机、电热毛巾架", items: ["智能马桶电源", "吹风机插座", "电热毛巾架"] },
+    { id: "p10", area: "阳台", rule: "洗衣机、烘干机、晾衣架、扫地机", items: ["洗烘插座×2", "电动晾衣架电源"] }
+  ],
+
+  /* ---------------- 量房记录（原始-模型.pdf 模板字段） ---------------- */
+  measureMeta: {
+    elevator: "", fireDoor: "", lowVoltBox: "", lowVoltHeight: "",
+    powerBox: "", powerHeight: "", entrance: ""
+  },
+  measure: [
+    { room: "玄关", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "客厅", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "餐厅", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "主卧", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "卧室一", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "卧室二", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "书房", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "厨房", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "主卫", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "公卫", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" },
+    { room: "阳台", beamW: "", beamD: "", sunken: "", door: "", window: "", note: "" }
+  ],
+
+  /* ---------------- 备忘清单 ---------------- */
+  notes: [
+    { id: "n1", text: "收房验房：检查墙面空鼓、顶面渗水、门窗开合、下水通畅", done: false },
+    { id: "n2", text: "办理装修手续、物业报备、缴纳装修押金", done: false },
+    { id: "n3", text: "确认空调 / 新风 / 地暖内机位置与吊顶回风口配合", done: false },
+    { id: "n4", text: "确认水电点位与橱柜、家电尺寸（冰箱 / 洗碗机 / 洗烘）", done: false },
+    { id: "n5", text: "与物业确认封窗样式、外立面要求", done: false },
+    { id: "n6", text: "预留智能门锁、电动窗帘、扫地机器人电源", done: false }
+  ],
+
+  /* ---------------- 工种准备清单（更新✅装修各项工种准备工作.pdf） ---------------- */
+  inspection: [
+    { id: "i01", category: "证件与交付", task: "核对房屋面积、户型、房号及交付资料", result: "待检查", note: "", photos: [] },
+    { id: "i02", category: "证件与交付", task: "确认水、电、燃气、物业费等费用结清及读数", result: "待检查", note: "", photos: [] },
+    { id: "i03", category: "入户门与门窗", task: "检查入户门、门锁、猫眼、门框及开关顺畅度", result: "待检查", note: "", photos: [] },
+    { id: "i04", category: "入户门与门窗", task: "检查窗框、玻璃、密封胶、五金、开合及渗漏痕迹", result: "待检查", note: "", photos: [] },
+    { id: "i05", category: "墙面与顶面", task: "检查墙顶面空鼓、裂缝、起砂、平整及阴阳角", result: "待检查", note: "", photos: [] },
+    { id: "i06", category: "墙面与顶面", task: "检查顶面、窗边、管道周围是否有渗水、水渍或霉斑", result: "待检查", note: "", photos: [] },
+    { id: "i07", category: "地面与防水", task: "检查地面裂缝、空鼓、起砂、平整度及高差", result: "待检查", note: "", photos: [] },
+    { id: "i08", category: "地面与防水", task: "检查厨卫、阳台防水及闭水试验记录（如交付包含）", result: "待检查", note: "", photos: [] },
+    { id: "i09", category: "给排水", task: "检查各水龙头出水、冷热水、管道接口及水压", result: "待检查", note: "", photos: [] },
+    { id: "i10", category: "给排水", task: "检查厨房、卫生间、阳台地漏和下水是否通畅", result: "待检查", note: "", photos: [] },
+    { id: "i11", category: "电气与设备", task: "检查强弱电箱、回路标识、插座通电及开关", result: "待检查", note: "", photos: [] },
+    { id: "i12", category: "电气与设备", task: "检查可视对讲、烟感、燃气报警及交付设备", result: "待检查", note: "", photos: [] },
+    { id: "i13", category: "公共与附属", task: "记录烟道、排气口、空调孔、设备平台和栏杆情况", result: "待检查", note: "", photos: [] },
+    { id: "i14", category: "公共与附属", task: "检查电梯、楼道、入户区域并记录钥匙、门禁卡数量", result: "待检查", note: "", photos: [] }
+  ],
+  materials: [],
+  contacts: [],
+  gallery: [],
+
+  preparation: [
+    { id: "p0", phase: "开工前确认", items: [
+      { id: "p0a", text: "物业处登记，办理装修许可证，确认物业管理费、建渣费、装修质保金", done: false },
+      { id: "p0b", text: "提前考察智能、中央空调、地暖、新风、净水设备", done: true },
+      { id: "p0c", text: "预约封窗、封阳台上门量尺", done: false },
+      { id: "p0d", text: "回收室内拉门", done: false }
+    ]},
+    { id: "p1", phase: "力工前确认", items: [
+      { id: "p1a", text: "根据拆除量与建渣谈好价格，办理装修许可", done: false },
+      { id: "p1b", text: "确认是否有暗埋龙头、花洒", done: false },
+      { id: "p1c", text: "确认是否做嵌入式毛巾架", done: false },
+      { id: "p1d", text: "确认是否做隐框门，提前让力工开槽", done: false }
+    ]},
+    { id: "p2", phase: "水电之前需要确定", items: [
+      { id: "p2a", text: "中央空调、新风、地暖方案与点位", done: true },
+      { id: "p2b", text: "封窗方案、型材、颜色与外侧排水斜坡", done: false },
+      { id: "p2c", text: "全屋智能 / 电动窗帘 / 智能开关 / 环绕音箱", done: false },
+      { id: "p2d", text: "全屋定制柜子：橱柜、卫浴柜水电图", done: false },
+      { id: "p2e", text: "嵌入式电器尺寸：洗碗机 / 蒸烤箱 / 冰箱 / 扫地机器人", done: false },
+      { id: "p2f", text: "电热毛巾架是否隐藏，小洗衣机 / 壁挂洗衣机水电图", done: false },
+      { id: "p2g", text: "管线机、净水、全屋净水 / 软水方案", done: true },
+      { id: "p2h", text: "花洒 / 手盆龙头是否暗埋，暗埋配件到位", done: false },
+      { id: "p2i", text: "投影 / 电视尺寸与预留电源、支架尺寸", done: false },
+      { id: "p2j", text: "是否更换入户门", done: false },
+      { id: "p2k", text: "是否需要蹲便，提前准备预埋件", done: false },
+      { id: "p2l", text: "地漏样式（长条 / 方形 / 极简）", done: false },
+      { id: "p2m", text: "浴缸水电图（如需要）", done: false }
+    ]},
+    { id: "p3", phase: "木工之前需要确定", items: [
+      { id: "p3a", text: "推拉门款式：普通 / 完美系统 / 几扇门 / 是否隐藏吊轨（厨房 / 书房）", done: false },
+      { id: "p3b", text: "隐形晾衣架尺寸；隐藏款需让厂家到现场安装", done: false },
+      { id: "p3c", text: "隐藏款灯、线条灯提前买好；射灯开孔尺寸（常用 75mm）", done: false },
+      { id: "p3d", text: "厨卫吊顶方案；提前买电器并预埋烟管止逆阀", done: false },
+      { id: "p3e", text: "空调极简风口、出回风口是否加长，提前送现场", done: true },
+      { id: "p3f", text: "无框门 / 隐形门与定制家具提前对接", done: false },
+      { id: "p3g", text: "电视机具体尺寸、厚度、是否需要伸缩支架、是否嵌入", done: false },
+      { id: "p3h", text: "全屋定制现场配合木工交底，确认打底位置", done: false },
+      { id: "p3i", text: "平顶是否做阴影缝 / 脱缝工艺", done: false }
+    ]},
+    { id: "p4", phase: "瓦工之前需要确定", items: [
+      { id: "p4a", text: "墙砖 / 地砖提前买好送到现场，确认尺寸", done: false },
+      { id: "p4b", text: "卫生间淋浴隔断提前定好，确认下沉区尺寸", done: false },
+      { id: "p4c", text: "是否需要瓷砖款地插，提前送到现场", done: false },
+      { id: "p4d", text: "卫生间地漏送到现场（方形 / 长条款）", done: false },
+      { id: "p4e", text: "是否需要瓷砖收口条预埋（厨房与乳胶漆交接）", done: false },
+      { id: "p4f", text: "铺完瓷砖、墙面刮一遍腻子后，所有主材复尺生产", done: false }
+    ]},
+    { id: "p5", phase: "油工之前需要确定", items: [
+      { id: "p5a", text: "墙面材质：乳胶漆 / 艺术漆；确认颜色", done: false },
+      { id: "p5b", text: "确认面漆什么时候喷", done: false },
+      { id: "p5c", text: "窗台理石下单，安排量尺生产", done: false },
+      { id: "p5d", text: "乳胶漆颜色与全屋定制颜色对比", done: false },
+      { id: "p5e", text: "油工二遍腻子后，板式家具二次复尺，防止尺寸变化", done: false }
+    ]},
+    { id: "p6", phase: "基装结束验收 / 收尾", items: [
+      { id: "p6a", text: "美缝（基装撤场后）", done: false },
+      { id: "p6b", text: "安装厨房止逆阀", done: false },
+      { id: "p6c", text: "安装厨房 / 阳台 / 卫生间集成吊顶或蜂窝大板", done: false },
+      { id: "p6d", text: "安装全屋定制、橱柜、木门、推拉门；洁具尽量最后", done: false },
+      { id: "p6e", text: "手盆先安装，再安装钛合金门", done: false },
+      { id: "p6f", text: "空调地暖收尾：空调口量尺，确定黑色 / 白色", done: false },
+      { id: "p6g", text: "电工收尾：安装开关插座；最后补一遍乳胶漆", done: false },
+      { id: "p6h", text: "安装无主灯：射灯、磁吸轨道灯等", done: false },
+      { id: "p6i", text: "确认地板安装顺序（柜子前还是柜子后）", done: false },
+      { id: "p6j", text: "全屋定制安装完后，安装踢脚线", done: false },
+      { id: "p6k", text: "卫生间花洒安装，坐便最后安装并封上保护", done: false },
+      { id: "p6l", text: "安装热水器、油烟机、冰箱、洗衣机、烘干机等电器", done: false },
+      { id: "p6m", text: "窗帘安装、家具进场", done: false },
+      { id: "p6n", text: "整体完工开荒保洁，拍照交付", done: false }
+    ]}
+  ]
+};

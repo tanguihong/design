@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家装项目管理平台</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">宅</div>
+        <div class="brand-text">
+          <strong>家装管理</strong>
+          <span>Project Console</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a class="nav-item" href="#overview" data-route="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          <span>项目总览</span>
+        </a>
+
+        <p class="nav-group">施工</p>
+        <a class="nav-item" href="#inspection" data-route="inspection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/><path d="M3 6h.01M3 18h.01"/></svg>
+          <span>收房验房</span>
+        </a>
+        <a class="nav-item" href="#preparation" data-route="preparation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M7 6h.01M7 12h.01M7 18h.01"/></svg>
+          <span>工种准备</span>
+        </a>
+        <a class="nav-item" href="#stages" data-route="stages">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg>
+          <span>阶段流程</span>
+        </a>
+        <a class="nav-item" href="#standards" data-route="standards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.8-7 9-4.1-1.2-7-4.8-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>工艺要求</span>
+        </a>
+        <a class="nav-item" href="#sockets" data-route="sockets">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v5M17 3v5"/><path d="M5 8h14v4a7 7 0 0 1-14 0V8z"/><path d="M12 19v2"/></svg>
+          <span>插座规划</span>
+        </a>
+        <a class="nav-item" href="#measure" data-route="measure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="19" height="8" rx="1.5"/><path d="M7 8v3M11 8v4M15 8v3M19 8v4"/></svg>
+          <span>量房记录</span>
+        </a>
+        <a class="nav-item" href="#gallery" data-route="gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-9 9"/></svg>
+          <span>阶段留档</span>
+        </a>
+        <a class="nav-item" href="#materials" data-route="materials">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
+          <span>材料进场</span>
+        </a>
+
+        <p class="nav-group">财务</p>
+        <a class="nav-item" href="#budget" data-route="budget">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h.01M8 15h2M12 15h2M16 15h.01M8 19h8"/></svg>
+          <span>预算管理</span>
+        </a>
+        <a class="nav-item" href="#expenses" data-route="expenses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12v4"/><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5"/><circle cx="16" cy="14" r="1.3"/></svg>
+          <span>实际开支</span>
+        </a>
+        <a class="nav-item" href="#contracts" data-route="contracts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+          <span>合同管理</span>
+        </a>
+
+        <p class="nav-group">资料</p>
+        <a class="nav-item" href="#contacts" data-route="contacts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17c.8-2 2.2-3 4-3s3.2 1 4 3"/></svg>
+          <span>通讯录</span>
+        </a>
+        <a class="nav-item" href="#equipment" data-route="equipment">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M8 9h8"/></svg>
+          <span>设备选材</span>
+        </a>
+        <a class="nav-item" href="#notes" data-route="notes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10l2 2 4-4M8 16h8"/></svg>
+          <span>备忘清单</span>
+        </a>
+        <a class="nav-item" href="#history" data-route="history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 4v4h4"/><path d="M12 8v4l3 2"/></svg>
+          <span>修改记录</span>
+        </a>
+        <a class="nav-item" href="#share" data-route="share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.3M8.2 13.2l7.6 4.3"/></svg>
+          <span>共同管理</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="save-state" id="saveState">
+          <i class="dot"></i><span>已自动保存</span>
+        </div>
+        <p class="foot-hint">数据保存到项目文件夹</p>
+      </div>
+    </aside>
+
+    <!-- 主区域 -->
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="page-head">
+          <h1 id="pageTitle">项目总览</h1>
+          <p id="pageSub">新房装修全流程管理</p>
+        </div>
+        <div class="top-actions">
+          <button class="btn ghost" data-action="toggle-edit" id="editToggle" title="切换编辑 / 只读">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <span id="editToggleText">解锁编辑</span>
+          </button>
+          <button class="btn ghost" data-action="export" title="导出数据备份">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <span>导出</span>
+          </button>
+          <button class="btn ghost" data-action="import" title="导入数据">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <span>导入</span>
+          </button>
+          <button class="btn ghost" data-action="print" title="打印 / 另存 PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+            <span>打印</span>
+          </button>
+        </div>
+        <input type="file" id="importFile" accept="application/json,.json" hidden />
+      </header>
+
+      <main class="view" id="view"></main>
+    </div>
+  </div>
+
+  <div class="overlay" id="sidebarOverlay"></div>
+  <div class="toast-wrap" id="toastWrap"></div>
+  <div class="modal-root" id="modalRoot"></div>
+
+  <script src="assets/js/data.js?v=20261121m"></script>
+  <script src="assets/js/store.js?v=20261121m"></script>
+  <script src="assets/js/components.js?v=20261121m"></script>
+  <script src="assets/js/views.js?v=20261121m"></script>
+  <script src="assets/js/router.js?v=20261121m"></script>
+  <script src="assets/js/main.js?v=20261121m"></script>
+</body>
+</html>
